@@ -1,11 +1,19 @@
-function TaskList({ tareas }) {
+function TaskList({ tareas, setTareas }) {
+
+    const delTask = (i) =>{
+        const nuevasTareas = tareas.filter((_, index) => index !== i);
+        setTareas(nuevasTareas);
+    }
+
     return (
-      <ul>
-        {tareas.map((t, i) => (
-          <li key={i}>{t}</li>
+        <ul>
+            {tareas.map((tarea, index) => (
+            <li key={index}>{tarea}
+            <button style={{marginLeft:10, height:40}}onClick={()=> delTask(index)}>Borrar tarea</button>
+            </li>
         ))}
-      </ul>
+        </ul>
     );
-  }
-  
+}
+
 export default TaskList;
