@@ -1,4 +1,3 @@
-// src/components/Taskltem.jsx
 import React from 'react';
 
 const TaskItem = ({ task, onToggleComplete, onDelete }) => {
