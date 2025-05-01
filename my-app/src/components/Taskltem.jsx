@@ -1,4 +1,4 @@
-// src/components/TaskItem.jsx
+// src/components/Taskltem.jsx
 import React from 'react';
 
 const TaskItem = ({ task, onToggleComplete, onDelete }) => {
@@ -30,4 +30,4 @@ const TaskItem = ({ task, onToggleComplete, onDelete }) => {
   );
 };
 
-export default TaskItem;
+export default Taskltem;
