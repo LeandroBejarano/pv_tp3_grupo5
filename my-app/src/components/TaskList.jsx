@@ -1,4 +1,5 @@
-function TaskList({ tareas, setTareas }) {
+function TaskList({ tareas, setTareas, busqueda }) {
+    const tareasFiltradas = tareas.filter(t => t.toLowerCase().includes(busqueda.toLowerCase()));
 
     const delTask = (i) =>{
         const nuevasTareas = tareas.filter((_, index) => index !== i);
@@ -7,9 +8,10 @@ function TaskList({ tareas, setTareas }) {
 
     return (
         <ul>
-            {tareas.map((tarea, index) => (
-            <li key={index}>{tarea}
-            <button style={{marginLeft:10, height:40}}onClick={()=> delTask(index)}>Borrar tarea</button>
+            {tareasFiltradas.map((tarea, index) => (
+            <li key={index}>
+                {tarea}
+                <button onClick={() => delTask(index)}>Borrar tarea</button>
             </li>
         ))}
         </ul>
