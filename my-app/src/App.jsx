@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 import TaskItem from "./components/TaskItem";
+=======
+import { useState } from "react"
+import TaskInput from "./components/TaskInput"
+import TaskList from "./components/TaskList"
+import TaskItem from "./components/TaskItem"
+>>>>>>> ca157fed8969443ab23c874d84612b9add7d7373
 
 function App() {
   const [tareas, setTareas] = useState([]);
