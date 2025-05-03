@@ -39,7 +39,31 @@ function App() {
             alert("No hay productos para eliminar.");
         }
     };
-    
+
+    const realizarOperaciones = (productosParaOperar) => {
+      console.log("\n--- Realizando operaciones ---");
+
+      console.log("\n--- 1 - Mostrar productos (forEach) ---");
+      productosParaOperar.forEach(producto => {
+          console.log(`Producto: ${producto.descripcion} - Precio: $${producto.precio}`);
+      });
+
+      console.log("\n--- 2 - Productos con precio mayor a $20 (filter) ---");
+      const productosMayor20 = productosParaOperar.filter(producto => producto.precio > 20);
+      console.log(productosMayor20);
+
+      console.log("\n--- 3 - Productos con IVA incluido (map) ---");
+      const productosConIVA = productosParaOperar.map(producto => ({
+          ...producto,
+          precioConIVA: producto.precio * 1.21,
+      }));
+      console.log(productosConIVA);
+
+      console.log("\n--- 4 - Array ordenado por precio (sort) ---");
+      const productosOrdenados = [...productosParaOperar].sort((a, b) => a.precio - b.precio);
+      console.log(productosOrdenados);
+  };
+
   return (
     <>
 
