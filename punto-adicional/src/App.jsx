@@ -65,9 +65,42 @@ function App() {
   };
 
   return (
-    <>
+    <div className="container">
+    <h1>Operaciones con Productos</h1> 
 
-    </>
+    <div>
+        <h2>Agregar Nuevo Producto</h2>
+        <input
+            type="text"
+            placeholder="Descripción"
+            value={nuevaDescripcion}
+            onChange={(e) => setNuevaDescripcion(e.target.value)}
+        />
+        <input
+            type="number"
+            placeholder="Precio"
+            value={nuevoPrecio}
+            onChange={(e) => setNuevoPrecio(e.target.value)}
+        />
+        <button onClick={agregarProductoWeb}>Agregar Producto</button>
+    </div>
+
+    <div>
+        <h2>Eliminar Producto con Precio Mínimo</h2>
+        <button onClick={eliminarProductoPrecioMinimoWeb}>Eliminar Mínimo</button>
+    </div>
+
+    <h2>Lista de Productos Actual</h2>
+    <ul>
+        {productos.map((producto, index) => (
+            <li key={index}>
+                {producto.descripcion} - Precio: ${producto.precio.toFixed(2)}
+            </li>
+        ))}
+    </ul>
+
+    <button onClick={() => realizarOperaciones(productos)}>Realizar Operaciones en Consola</button>
+    </div>
   )
 }
 
